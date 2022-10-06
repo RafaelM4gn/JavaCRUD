@@ -5,24 +5,31 @@ import java.util.Calendar;
 /**
  * Instance
  */
-public class Instance {
-    private int number;
+public class Entity {
+    private int id;
+    private String name;
     private boolean bool;
-    private String sentence;
     private Calendar release;
 
-    public Instance(int number, boolean bool, String sentence, Calendar release) {
-        this.number = number;
+    public Entity() {
+        this.id = 1;
+        this.bool = true;
+        this.name = "Default Entity";
+        this.release = Calendar.getInstance();
+    }
+
+    public Entity(int number, boolean bool, String sentence, Calendar release) {
+        this.id = number;
         this.bool = bool;
-        this.sentence = sentence;
+        this.name = sentence;
         this.release = release;
     }
 
     public int getNumber() {
-        return number;
+        return id;
     }
     public void setNumber(int number) {
-        this.number = number;
+        this.id = number;
     }
     public boolean isBool() {
         return bool;
@@ -31,10 +38,10 @@ public class Instance {
         this.bool = bool;
     }
     public String getSentence() {
-        return sentence;
+        return name;
     }
     public void setSentence(String sentence) {
-        this.sentence = sentence;
+        this.name = sentence;
     }
     public Calendar getRelease() {
         return release;
@@ -44,9 +51,9 @@ public class Instance {
     }
 
     public void listAtributes() {
-        System.out.println("Number: " + number +
+        System.out.println("Number: " + id +
                 " - Bool: " + bool +
-                " - Sentence: " + sentence +
+                " - Sentence: " + name +
                 " - Release: " + release.get(Calendar.DAY_OF_MONTH) +
                 "/" + release.get(Calendar.MONTH) +
                 "/" + release.get(Calendar.YEAR) +
